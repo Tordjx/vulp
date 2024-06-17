@@ -28,7 +28,7 @@ BulletInterface::BulletInterface(const ServoLayout& layout,
                                  const Parameters& params)
     : Interface(layout), params_(params) {
   // Start simulator
-  auto flag = (params.gui ? eSHARED_MEMORY : eSHARED_MEMORY_SERVER);
+  auto flag = (params.gui ? SHARED_MEMORY : SHARED_MEMORY_SERVER);
   bool is_connected = bullet_.connect(flag);
   if (!is_connected) {
     throw std::runtime_error("Could not connect to the Bullet GUI");
